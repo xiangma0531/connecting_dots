@@ -1,1 +1,7 @@
 <h1>新規投稿画面</h1>
+<%= form_with model: @dot, url: dots_path, method: :post , local: true do |f| %>
+  <div class="field">
+    <%= f.label "タイトル" %>
+    <%= f.text_field :title, placeholder: "タイトル" %>
+  </div>
+<% end %>
