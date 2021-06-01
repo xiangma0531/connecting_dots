@@ -27,7 +27,7 @@ RSpec.describe Dot, type: :model do
       end
 
       it 'categoryが空では保存されない' do
-        @dot.category = nil
+        @dot.category_id = nil
         @dot.valid?
         expect(@dot.errors.full_messages).to include("Category can't be blank")
       end
