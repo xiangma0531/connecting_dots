@@ -1,1 +1,8 @@
-<%= @dot.title %>
+<div>
+  <p>タイトル：<%= @dot.title %></p>
+  <p>活動日：<%= @dot.acted_at %></p>
+  <p>カテゴリー：<%= @dot.category.name %></p>
+  <p>活動概要：<%= @dot.introduction %></p>
+  <p>頑張ったこと：<%= @dot.effort %></p>
+  <p>学んだこと：<%= @dot.study %></p>
+</div>

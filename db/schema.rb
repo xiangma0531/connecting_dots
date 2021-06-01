@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_06_01_045518) do
 
   create_table "dots", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.integer "category", null: false
+    t.integer "category_id", null: false
     t.text "introduction", null: false
     t.text "effort", null: false
     t.text "study", null: false
