@@ -1,5 +1,8 @@
 <% if student_signed_in? %>
-  <%= current_student.name %>としてログインしています
+  <div class=>
+    <p><%= current_student.grade %>年<%= current_student.team %>組<%= current_student.number %>番</p>
+    <%= current_student.name %>としてログインしています
+  </div>
   <%= link_to 'ログアウト', destroy_student_session_path, method: :delete %>
 <% else %>
   <%= link_to 'ログイン', new_student_session_path %>
