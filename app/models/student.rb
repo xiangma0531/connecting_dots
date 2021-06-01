@@ -9,4 +9,6 @@ class Student < ApplicationRecord
     validates :team
     validates :number
   end
+
+  has_many :dots
 end
