@@ -7,6 +7,14 @@
     <%= link_to 'New Dot', new_dot_path %>
   </div>
   <%= link_to 'ログアウト', destroy_student_session_path, method: :delete %>
+  <div>
+    <% @dots.each do |dot| %>
+      <div>
+        <%= link_to dot.title, root_path %>
+        <%= dot.acted_at %>
+      </div>
+    <% end %>
+  </div>
 <% else %>
   <%= link_to 'ログイン', new_student_session_path %>
   <%= link_to '新規登録', new_student_registration_path %>
