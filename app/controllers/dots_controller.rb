@@ -12,6 +12,10 @@ class DotsController < ApplicationController
     end
   end
 
+  def show
+    @dot = Dot.find(params[:id])
+  end
+
   private
   def dot_params
     params.require(:dot).permit(:title, :category, :introduction, :effort, :study, :acted_at).merge(student_id: current_student.id)
