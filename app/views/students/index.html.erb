@@ -1,3 +1,7 @@
 <% if student_signed_in? %>
-  ログインしています
+  <%= current_student.name %>としてログインしています
+  <%= link_to 'ログアウト', destroy_student_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'ログイン', new_student_session_path %>
+  <%= link_to '新規登録', new_student_registration_path %>
 <% end %>
