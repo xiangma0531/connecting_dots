@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_094228) do
+ActiveRecord::Schema.define(version: 2021_06_01_045518) do
+
+  create_table "dots", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "category", null: false
+    t.text "introduction", null: false
+    t.text "effort", null: false
+    t.text "study", null: false
+    t.date "acted_at", null: false
+    t.bigint "student_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_dots_on_student_id"
+  end
 
   create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -28,4 +41,5 @@ ActiveRecord::Schema.define(version: 2021_05_31_094228) do
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "dots", "students"
 end
