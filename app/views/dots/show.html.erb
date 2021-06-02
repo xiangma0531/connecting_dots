@@ -8,5 +8,5 @@
 </div>
 <div>
   <%= link_to '編集', edit_dot_path(@dot.id) %>
-  <%= link_to '削除', root_path %>
+  <%= link_to '削除', dot_path(@dot.id), method: :delete %>
 </div>
