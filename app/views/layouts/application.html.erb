@@ -8,10 +8,43 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-   <header>
-    <%= link_to 'トップページへ',root_path %>
-  </header>
   <body>
-    <%= yield %>
+  <header class="header">
+    <div class="header_title_box">
+      <%= link_to 'Connecting the Dots',root_path, class: "header_title" %>
+    </div>
+    <div class="header_right">
+      <% if student_signed_in? %>
+        <div class="new_dot">
+          <%= link_to "New Dot", new_dot_path, class: "new_dot_btn" %>
+        </div>
+        <div class="student_session">
+          <%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "session_btn" %>
+        </div>
+      <% else %>
+        <div class="student_session">
+          <%= link_to "ログイン", new_student_session_path, class: "session_btn" %>
+        </div>
+        <div class="student_session">
+          <%= link_to "新規登録", new_student_registration_path, class: "session_btn" %>
+        </div>
+      <% end %>
+    </div>
+  </header>
+  <div class="student_info">
+    <% if student_signed_in? %>
+      <p class="student_num"><%= current_student.grade %>年</p>
+      <p class="student_num"><%= current_student.team %>組</p>
+      <p class="student_num"><%= current_student.number %>番：</p>
+      <p class="student_name"><%= current_student.name %></p>
+    <% else %>
+      右上のボタンから<b>「ログイン」</b>または<b>「新規登録」</b>してください
+    <% end %>
+  </div>
+  <div class="contents_wrapper">
+    <div class="contents">
+      <%= yield %>
+    </div>
+  </div>
   </body>
 </html>
