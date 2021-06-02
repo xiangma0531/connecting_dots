@@ -1,12 +1,30 @@
-<div>
-  <p>タイトル：<%= @dot.title %></p>
-  <p>活動日：<%= @dot.acted_at %></p>
-  <p>カテゴリー：<%= @dot.category.name %></p>
-  <p>活動概要：<%= @dot.introduction %></p>
-  <p>頑張ったこと：<%= @dot.effort %></p>
-  <p>学んだこと：<%= @dot.study %></p>
+<div class="operation_buttons">
+  <%= link_to '編集', edit_dot_path(@dot.id), class: "ope_btn" %>
+  <%= link_to '削除', dot_path(@dot.id), method: :delete, class: "ope_btn" %>
 </div>
-<div>
-  <%= link_to '編集', edit_dot_path(@dot.id) %>
-  <%= link_to '削除', dot_path(@dot.id), method: :delete %>
-</div>
+<table class="dot_table">
+  <tr>
+    <th class="single_row_table">タイトル</th>
+    <td class="single_row_table"><%= @dot.title %></td>
+  </tr>
+  <tr>
+    <th class="single_row_table">活動日</th>
+    <td class="single_row_table"><%= @dot.acted_at %></td>
+  </tr>
+  <tr>
+    <th class="single_row_table">カテゴリー</th>
+    <td class="single_row_table"><%= @dot.category.name %></td>
+  </tr>
+  <tr>
+    <th class="single_row_table">活動概要</th>
+    <td><%= @dot.introduction %></td>
+  </tr>
+  <tr>
+    <th class="single_row_table">頑張ったこと</th>
+    <td><%= @dot.effort %></td>
+  </tr>
+  <tr>
+    <th class="single_row_table">学んだこと</th>
+    <td><%= @dot.study %></td>
+  </tr>
+</table>
