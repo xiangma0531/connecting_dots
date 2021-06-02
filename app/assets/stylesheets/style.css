@@ -88,6 +88,7 @@ header {
 .contents {
   width: 60vw;
   padding: 5px;
+  overflow: scroll;
 }
 
 .dot {
