@@ -111,3 +111,43 @@ header {
   justify-content: flex-end;
   margin: 15px;
 }
+
+/* 詳細画面 */
+.operation_buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.ope_btn {
+  font-size: 20px;
+  margin: 5px 20px 30px;
+  padding: 5px;
+  border: 2px solid #57c3e9;
+}
+
+.dot_table {
+  width: 100%;
+  margin-bottom: 30px;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+table th, table td {
+  border: 1px solid black;
+  height: 50px;
+  padding: 5px 10px ;
+  font-size: 16px;
+}
+
+.single_row_table {
+  text-align: center;
+}
+
+th {
+  width: 30%;
+}
+
+td {
+  width: 70%;
+}
