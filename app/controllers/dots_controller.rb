@@ -17,11 +17,11 @@ class DotsController < ApplicationController
   def show
   end
 
-  def new
+  def edit
   end
 
   def update
-    if @dot.update
+    if @dot.update(dot_params)
       redirect_to dot_path(@dot.id)
     else
       render :edit
