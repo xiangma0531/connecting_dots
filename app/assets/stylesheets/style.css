@@ -1,0 +1,113 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+  background-color: #f5f5f3;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+header {
+  height: 56px;
+  padding: 0 80px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_title_box {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 56px;
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+}
+
+.new_dot {
+  padding: 5px 15px;
+  border: 2px solid #57c3e9;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.new_dot_btn {
+  color: #57c3e9;
+}
+
+.student_session {
+  padding: 5px 15px;
+  margin-left: 15px;
+  border: 2px solid #57c3e9;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.session_btn {
+  color: #666;
+}
+
+.student_info {
+  display: flex;
+  padding-left: 80px;
+  font-size: 20px;
+}
+
+.student_num {
+  margin-left: 9px;
+}
+
+.student_name {
+  margin-left: 5px;
+}
+
+.contents_wrapper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 130px);
+}
+
+.contents {
+  width: 60vw;
+  padding: 5px;
+  overflow: scroll;
+}
+
+.dot {
+  height: 100px;
+  width: 50vw;
+  margin: 20px auto;
+  border: 1px solid lightgray;
+  background-color: white;
+}
+
+.dot_upper {
+  margin: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #666;
+  font-size: 23px;
+}
+
+.acted_at {
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px;
+}
