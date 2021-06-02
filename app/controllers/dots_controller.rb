@@ -1,4 +1,6 @@
 class DotsController < ApplicationController
+  before_action :set_dot, only: [:show, :edit, :update]
+
   def new
     @dot = Dot.new
   end
@@ -13,11 +15,25 @@ class DotsController < ApplicationController
   end
 
   def show
-    @dot = Dot.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @dot.update(dot_params)
+      redirect_to dot_path(@dot.id)
+    else
+      render :edit
+    end
   end
 
   private
   def dot_params
     params.require(:dot).permit(:title, :category_id, :introduction, :effort, :study, :acted_at).merge(student_id: current_student.id)
+  end
+
+  def set_dot
+    @dot = Dot.find(params[:id])
   end
 end

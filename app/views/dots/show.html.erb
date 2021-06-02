@@ -7,6 +7,6 @@
   <p>学んだこと：<%= @dot.study %></p>
 </div>
 <div>
-  <%= link_to '編集', root_path %>
+  <%= link_to '編集', edit_dot_path(@dot.id) %>
   <%= link_to '削除', root_path %>
 </div>
