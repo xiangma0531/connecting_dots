@@ -1,36 +1,36 @@
 <%= form_with(model: dot, local: true) do |f| %>
-  <div class="field">
+  <div class="form_parts">
     <%= f.label "タイトル" %>
     <%= f.text_field :title, placeholder: "タイトル" %>
   </div>
 
-  <div>
+  <div class="form_parts">
     <%= f.label "活動日" %>
     <%= f.date_field :acted_at %>
   </div>
 
-  <div>
+  <div class="form_parts">
     <%= f.label "カテゴリー" %>
     <%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: "---"} %>
   </div>
 
-  <div>
+  <div class="form_parts">
     <%= f.label "概要" %>
     <%= f.text_area :introduction, placeholder: "どんな活動をしたか記入" %>
   </div>
 
-  <div>
+  <div class="form_parts">
     <%= f.label "頑張ったこと" %>
     <%= f.text_area :effort, placeholder: "自分なりに頑張ったことを記入" %>
   </div>
 
-  <div>
+  <div class="form_parts">
     <%= f.label "活動を通して学んだこと" %>
     <%= f.text_area :study, placeholder: "活動を通して学んだことを記入" %>
   </div>
 
-  <div>
-    <%= f.submit "作成" %>
+  <div class="dot_action">
+    <%= f.submit "作成", class: "dot_action_btn" %>
   </div>
 
 <% end %>
