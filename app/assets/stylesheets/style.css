@@ -29,9 +29,14 @@ header {
 }
 
 .header_title_box {
-  font-size: 30px;
+  height: 100%;
+  font-size: 25px;
   font-weight: bold;
-  line-height: 56px;
+}
+
+.header_title_bottom {
+  font-size: 12px;
+  padding: 0 0 0 80px;
 }
 
 .header_right {
