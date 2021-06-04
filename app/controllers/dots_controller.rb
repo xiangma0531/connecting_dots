@@ -1,4 +1,5 @@
 class DotsController < ApplicationController
+  before_action :move_to_index, only: [:show, :edit, :update, :destroy]
   before_action :set_dot, only: [:show, :edit, :update]
 
   def new
@@ -41,5 +42,12 @@ class DotsController < ApplicationController
 
   def set_dot
     @dot = Dot.find(params[:id])
+  end
+
+  def move_to_index
+    dot = Dot.find(params[:id])
+    unless dot.student_id == current_student.id
+      redirect_to root_path
+    end
   end
 end
