@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    attributes:
+      student:
+        name: 名前
+        grade: 学年
+        team: クラス
+        number: 出席番号
+      dot:
+        title: タイトル
+        category_id: カテゴリー
+        introduction: 概要
+        effort: 頑張ったこと
+        study: 活動を通して学んだこと
+        acted_at: 活動日

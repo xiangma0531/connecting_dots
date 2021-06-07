@@ -1,4 +1,6 @@
 <%= form_with(model: dot, local: true) do |f| %>
+  <%= render partial: 'layouts/error_messages', model: dot %>
+
   <div class="form_parts">
     <%= f.label "タイトル" %>
     <%= f.text_field :title, placeholder: "タイトル" %>
