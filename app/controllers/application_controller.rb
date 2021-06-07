@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth
   before_action :authenticate_student!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters_edit, if: :devise_controller?
 
   private
   def basic_auth
@@ -12,5 +13,9 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :grade, :team, :number])
+  end
+
+  def configure_permitted_parameters_edit
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :grade, :team, :number])
   end
 end
