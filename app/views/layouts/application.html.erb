@@ -16,19 +16,27 @@
     </div>
     <div class="header_right">
       <% if student_signed_in? %>
-        <div class="new_dot">
-          <%= link_to "New Dot", new_dot_path, class: "new_dot_btn" %>
-        </div>
-        <div class="student_session">
-          <%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "session_btn" %>
-        </div>
+        <ul class="header_buttons">
+          <li class="new_dot">
+            <%= link_to "New Dot", new_dot_path, class: "new_dot_btn" %>
+          </li>
+          <li class="student_session">
+            <p id="menu_trigger">Student</p>
+          </li>
+        </ul>
+        <ul id="session_menu">
+          <li class="menu_list" id="student_edit"><%= link_to "生徒情報編集", root_path %></li>
+          <li class="menu_list"><%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "session_btn" %></li>
+        </ul>
       <% else %>
-        <div class="student_session">
-          <%= link_to "ログイン", new_student_session_path, class: "session_btn" %>
-        </div>
-        <div class="student_session">
-          <%= link_to "新規登録", new_student_registration_path, class: "session_btn" %>
-        </div>
+        <ul class="header_buttons">
+          <li class="student_session">
+            <%= link_to "ログイン", new_student_session_path, class: "session_btn" %>
+          </li>
+          <li class="student_session">
+            <%= link_to "新規登録", new_student_registration_path, class: "session_btn" %>
+          </li>
+        </ul>
       <% end %>
     </div>
   </header>

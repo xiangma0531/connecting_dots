@@ -40,8 +40,15 @@ header {
 }
 
 .header_right {
+  padding-top: 10px;
+}
+
+.header_buttons {
   display: flex;
-  align-items: center;
+}
+
+li {
+  list-style: none;
 }
 
 .new_dot {
@@ -67,6 +74,28 @@ header {
 
 .session_btn {
   color: #666;
+}
+
+#menu_trigger {
+  padding: 0;
+}
+
+#session_menu {
+  margin-left: 123px;
+  background-color: white;
+  border: 1px solid #666;
+  display: none;
+}
+
+.menu_list {
+  padding: 5px 0;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#student_edit {
+  border-bottom: 1px solid #666;
 }
 
 .student_info {
