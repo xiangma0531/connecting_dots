@@ -8,7 +8,8 @@ class DotsController < ApplicationController
 
   def create
     @dot = Dot.new(dot_params)
-    if @dot.save
+    if @dot.valid?
+      @dot.save
       redirect_to root_path
     else
       render :new

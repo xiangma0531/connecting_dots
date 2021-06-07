@@ -1,6 +1,11 @@
 <div class="form_wrapper">
   <h1 class="student_manage_title">ログイン</h1>
+  <div class="login-flash-message">
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
     <div class="form_parts">
       <%= f.label "メールアドレス" %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
