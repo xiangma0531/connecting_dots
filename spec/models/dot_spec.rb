@@ -17,43 +17,43 @@ RSpec.describe Dot, type: :model do
       it 'titleが空では保存されない' do
         @dot.title = ''
         @dot.valid?
-        expect(@dot.errors.full_messages).to include("Title can't be blank")
+        expect(@dot.errors.full_messages).to include("タイトルを入力してください")
       end
       
       it 'acted_atが空では保存されない' do
         @dot.acted_at = ''
         @dot.valid?
-        expect(@dot.errors.full_messages).to include("Acted at can't be blank")
+        expect(@dot.errors.full_messages).to include("活動日を入力してください")
       end
 
       it 'categoryが空では保存されない' do
         @dot.category_id = nil
         @dot.valid?
-        expect(@dot.errors.full_messages).to include("Category can't be blank")
+        expect(@dot.errors.full_messages).to include("カテゴリーを入力してください")
       end
 
       it 'introductionが空では保存されない' do
         @dot.introduction = ''
         @dot.valid?
-        expect(@dot.errors.full_messages).to include("Introduction can't be blank")
+        expect(@dot.errors.full_messages).to include("概要を入力してください")
       end
 
       it 'effortが空では保存されない' do
         @dot.effort = ''
         @dot.valid?
-        expect(@dot.errors.full_messages).to include("Effort can't be blank")
+        expect(@dot.errors.full_messages).to include("頑張ったことを入力してください")
       end
 
       it 'studyが空では保存されない' do
         @dot.study = ''
         @dot.valid?
-        expect(@dot.errors.full_messages).to include("Study can't be blank")
+        expect(@dot.errors.full_messages).to include("活動を通して学んだことを入力してください")
       end
 
       it '紐づくstudentがいなければ保存されない' do
         @dot.student = nil
         @dot.valid?
-        expect(@dot.errors.full_messages).to include("Student must exist")
+        expect(@dot.errors.full_messages).to include("Studentを入力してください")
       end
     end
   end
