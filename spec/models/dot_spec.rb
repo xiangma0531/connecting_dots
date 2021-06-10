@@ -15,42 +15,49 @@ RSpec.describe Dot, type: :model do
 
     context '新規投稿が保存されないとき' do
       it 'titleが空では保存されない' do
+        binding.pry
         @dot.title = ''
         @dot.valid?
         expect(@dot.errors.full_messages).to include("Title can't be blank")
       end
       
       it 'acted_atが空では保存されない' do
+        binding.pry
         @dot.acted_at = ''
         @dot.valid?
         expect(@dot.errors.full_messages).to include("Acted at can't be blank")
       end
 
       it 'categoryが空では保存されない' do
+        binding.pry
         @dot.category_id = nil
         @dot.valid?
         expect(@dot.errors.full_messages).to include("Category can't be blank")
       end
 
       it 'introductionが空では保存されない' do
+        binding.pry
         @dot.introduction = ''
         @dot.valid?
         expect(@dot.errors.full_messages).to include("Introduction can't be blank")
       end
 
       it 'effortが空では保存されない' do
+        binding.pry
         @dot.effort = ''
         @dot.valid?
         expect(@dot.errors.full_messages).to include("Effort can't be blank")
       end
 
       it 'studyが空では保存されない' do
+        binding.pry
         @dot.study = ''
         @dot.valid?
         expect(@dot.errors.full_messages).to include("Study can't be blank")
       end
 
       it '紐づくstudentがいなければ保存されない' do
+        binding.pry
         @dot.student = nil
         @dot.valid?
         expect(@dot.errors.full_messages).to include("Student must exist")
