@@ -1,21 +1,24 @@
 <% if student_signed_in? %>
-  <% @dots.each do |dot| %>
-    <div class="dot">
-      <div class="dot_upper">
-        <%= link_to dot.title, dot_path(dot.id) %>
-      </div>
-      <div class="dot_bottom">
-        <div class="acted_at">
-          <div class="act">
-            活動日：
+  <div class="contents_wrapper">
+    <div class="contents">
+      <% @dots.each do |dot| %>
+        <div class="dot">
+          <div class="dot_upper">
+            <%= link_to dot.title, dot_path(dot.id) %>
           </div>
-          <div class="date">
-            <%= dot.acted_at %>
+          <div class="dot_bottom">
+            <div class="acted_at">
+              <div class="act">
+                活動日：
+              </div>
+              <div class="date">
+                <%= dot.acted_at %>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
-  <% end %>
   </div>
 <% else %>
   <div class="top-imagewrapper">
